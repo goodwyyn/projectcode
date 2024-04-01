@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Login Page</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: aqua; /* Set background color to aqua */
+    }
+    .container {
+        width: 80%;
+        margin: auto;
+        padding-top: 50px;
+    }
+    .signup-form {
+        background-color: #fff;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    }
+    .input-group {
+        margin-bottom: 20px;
+    }
+    .input-group label {
+        display: block;
+        margin-bottom: 5px;
+    }
+    .input-group input {
+        width: 100%;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        box-sizing: border-box;
+    }
+    .btn {
+        background-color: #4CAF50;
+        color: white;
+        padding: 14px 20px;
+        margin-top: 10px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        width: 100%;
+    }
+    .btn:hover {
+        background-color: #45a049;
+    }
+</style>
+</head>
+<body>
+
+<div class="container">
+    <div class="login-form">
+        
+    </div>
+    
+    <div class="signup-form" style="display: none;" id="PatientSignupForm">
+        <h2>User Sign Up</h2>
+        <form method="post" action="register.php">
+            <div class="input-group">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+            <div class="input-group">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div class="input-group">
+                <label for="phone">Phone Number:</label>
+                <input type="text" id="phone" name="phone" required>
+            </div>
+            <div class="input-group">
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" required>
+            </div>
+            <div class="input-group">
+                <label for="confirmPassword">Confirm Password:</label>
+                <input type="password" id="confirmPassword" name="confirmPassword" required>
+            </div>
+            <button type="submit" class="btn" name="patient_signup">Sign Up</button>
+        </form>
+    </div>
+    
+    <div class="signup-form" style="display: none;" id="doctorSignupForm">
+        <h2>Doctor Sign Up</h2>
+        <form method="post" action="register.php">
+            <div class="input-group">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+            <div class="input-group">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div class="input-group">
+                <label for="idNumber">ID Number:</label>
+                <input type="text" id="idNumber" name="idNumber" required>
+            </div>
+            <div class="input-group">
+                <label for="RegNumber">Reg Number:</label>
+                <input type="text" id="RegNumber" name="RegNumber" required>
+            </div>
+            <div class="input-group">
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" required>
+            </div>
+            <div class="input-group">
+                <label for="confirmPassword">Confirm Password:</label>
+                <input type="password" id="confirmPassword" name="confirmPassword" required>
+            </div>
+            <button type="submit" class="btn" name="doctor_signup">Sign Up</button>
+        </form>
+    </div>
+    
+    <div class="signup-form" style="display: none;" id="adminSignupForm">
+        <h2>Admin Sign Up</h2>
+        <form method="post" action="register.php">
+            <div class="input-group">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+            <div class="input-group">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div class="input-group">
+                <label for="hrNumber">HR Number:</label>
+                <input type="text" id="hrNumber" name="hrNumber" required>
+            </div>
+            <div class="input-group">
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" required>
+            </div>
+            <div class="input-group">
+                <label for="confirmPassword">Confirm Password:</label>
+                <input type="password" id="confirmPassword" name="confirmPassword" required>
+            </div>
+            <button type="submit" class="btn" name="admin_signup">Sign Up</button>
+        </form>
+    </div>
+    <div style="text-align: center;">
+        <div class="radios">
+            <p style="font-family: 'Times New Roman', Times, serif; font-size: 18px;">Select your role:</p>
+            <label style="font-family: 'Times New Roman', Times, serif; font-size: 16px;"><input type="radio" name="role" value="patient" onclick="showSignupForm('PatientSignupForm')"> Patient</label>
+            <label style="font-family: 'Times New Roman', Times, serif; font-size: 16px;"><input type="radio" name="role" value="doctor" onclick="showSignupForm('doctorSignupForm')"> Doctor</label>
+            <label style="font-family: 'Times New Roman', Times, serif; font-size: 16px;"><input type="radio" name="role" value="admin" onclick="showSignupForm('adminSignupForm')"> Admin</label>
+        </div>
+    </div>
+
+</div>
+
+<script>
+function showSignupForm(formId) {
+    var forms = document.querySelectorAll('.signup-form');
+    for (var i = 0; i < forms.length; i++) {
+        forms[i].style.display = 'none';
+    }
+    document.getElementById(formId).style.display = 'block';
+}
+</script>
+
+</body
